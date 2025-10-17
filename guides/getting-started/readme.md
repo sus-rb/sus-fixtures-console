@@ -24,7 +24,7 @@ $ bundle add sus-fixtures-console
 Here is a basic example of a test, that captures the log output:
 
 ``` ruby
-require 'sus/fixtures/console/captured_logger'
+require "sus/fixtures/console/captured_logger"
 
 describe Sus::Fixtures::Console::CapturedLogger do
 	include Sus::Fixtures::Console::CapturedLogger
@@ -82,6 +82,6 @@ In many cases, you may wish to set a default log level that only prints warnings
 
 ``` ruby
 # In your `config/sus.rb` file:
-require 'console'
+require "console"
 Console.logger.warn!
 ```
