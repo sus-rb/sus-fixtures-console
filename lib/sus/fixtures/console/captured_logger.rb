@@ -13,11 +13,16 @@ module Sus
 		module Console
 			# Shared context for capturing console output during tests.
 			# Provides access to captured log messages and helper methods for testing console logging.
-			CapturedLogger = Sus::Shared("captured logger") do
-				# @attribute [Console::Capture] Captures console output for inspection.
-				let(:console_capture) {::Console::Capture.new}
-				# @attribute [Console::Logger] Logger configured to capture output at DEBUG level.
-				let(:console_logger) {::Console::Logger.new(console_capture, level: ::Console::Logger::DEBUG)}
+			module CapturedLogger
+				# @returns [Console::Capture] Captures console output for inspection.
+				def console_capture
+					@console_capture ||= ::Console::Capture.new
+				end
+				
+				# @returns [Console::Logger] Logger configured to capture output at DEBUG level.
+				def console_logger
+					@console_logger ||= ::Console::Logger.new(console_capture, level: ::Console::Logger::DEBUG)
+				end
 				
 				# Set up console logger before test execution and clean up afterwards.
 				def around

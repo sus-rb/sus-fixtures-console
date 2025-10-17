@@ -13,9 +13,11 @@ module Sus
 		module Console
 			# Shared context for suppressing console output during tests.
 			# Redirects all console logging to a null output to prevent noise in test runs.
-			NullLogger = Sus::Shared("null logger") do
-				# @attribute [Console::Logger] Logger configured to suppress all output.
-				let(:console_logger) {::Console::Logger.new(::Console::Output::Null.new)}
+			module NullLogger
+				# @returns [Console::Logger] Logger configured to suppress all output.
+				def console_logger
+					@console_logger ||= ::Console::Logger.new(::Console::Output::Null.new)
+				end
 				
 				# Set up null logger before test execution and clean up afterwards.
 				def around

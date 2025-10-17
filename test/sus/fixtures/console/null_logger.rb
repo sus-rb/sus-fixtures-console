@@ -6,7 +6,7 @@
 require "sus/fixtures/console/null_logger"
 
 describe Sus::Fixtures::Console::NullLogger do
-	include_context Sus::Fixtures::Console::NullLogger
+	include Sus::Fixtures::Console::NullLogger
 	
 	it "should capture output" do
 		expect($stderr).not.to receive(:puts)

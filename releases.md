@@ -1,5 +1,10 @@
 # Releases
 
+## Unreleased
+
+  - Prefer modules over `Sus::Shared` contexts for better integration.
+    - Use `include Sus::Fixtures::Console::NullLogger` instead of `include_context Sus::Fixtures::Console::NullLogger`.
+
 ## v0.4.0
 
   - Add agent context.

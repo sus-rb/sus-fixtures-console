@@ -6,7 +6,7 @@
 require "sus/fixtures/console/captured_logger"
 
 describe Sus::Fixtures::Console::CapturedLogger do
-	include_context Sus::Fixtures::Console::CapturedLogger
+	include Sus::Fixtures::Console::CapturedLogger
 	
 	it "should capture output" do
 		Console.debug("Hello, World!")

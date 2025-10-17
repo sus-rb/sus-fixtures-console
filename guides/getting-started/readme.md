@@ -27,7 +27,7 @@ Here is a basic example of a test, that captures the log output:
 require 'sus/fixtures/console/captured_logger'
 
 describe Sus::Fixtures::Console::CapturedLogger do
-	include_context Sus::Fixtures::Console::CapturedLogger
+	include Sus::Fixtures::Console::CapturedLogger
 	
 	it "should capture output" do
 		Console.debug("Hello, World!")
@@ -46,7 +46,7 @@ If you want to ignore the console output, you can use the `Sus::Fixtures::Consol
 
 ``` ruby
 describe Sus::Fixtures::Console::NullLogger do
-	include_context Sus::Fixtures::Console::NullLogger
+	include Sus::Fixtures::Console::NullLogger
 	
 	it "should capture output" do
 		expect($stderr).not.to receive(:puts)
@@ -63,7 +63,7 @@ You can also use the `expect_console` helper method for more fluent test asserti
 
 ``` ruby
 describe Sus::Fixtures::Console::CapturedLogger do
-	include_context Sus::Fixtures::Console::CapturedLogger
+	include Sus::Fixtures::Console::CapturedLogger
 	
 	it "can use expect_console helper" do
 		Console.info("Processing complete")
