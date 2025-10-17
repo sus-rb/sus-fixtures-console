@@ -20,6 +20,11 @@ Please see the [project documentation](https://socketry.github.io/sus-fixtures-c
 
 Please see the [project releases](https://socketry.github.io/sus-fixtures-console/releases/index) for all releases.
 
+### v0.5.0
+
+  - Prefer modules over `Sus::Shared` contexts for better integration.
+      - Use `include Sus::Fixtures::Console::NullLogger` instead of `include_context Sus::Fixtures::Console::NullLogger`.
+
 ### v0.4.0
 
   - Add agent context.
